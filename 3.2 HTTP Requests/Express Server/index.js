@@ -3,16 +3,32 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-    res.send("This is a server running on Mike's computer");
+    res.send("This is a server running on a local host");
 });
 
 app.get("/about", (req, res) => {
-    res.send("I am currently the head of developers at Lucidia and I am a game developer and a full stack developer. I also have some experience in smart contracts and solidity");
+    res.send("About Page");
 });
 
 app.get("/contact", (req, res) => {
-    res.send("You can contact me at malek.sharabi@lucidia.io")
-})
+    res.send("Contact Page")
+});
+
+app.post("/register", (req, res) =>{
+    res.sendStatus(201);
+});
+
+app.put("/user/mike", (req, res) => {
+    res.sendStatus(200);
+});
+
+app.patch("/user/mike", (req, res) => {
+    res.sendStatus(200);
+});
+
+app.delete("/user/mike", (req, res) => {
+    res.sendStatus(200);
+});
 
 app.listen(3000, () =>{
     console.log(`Server running on port ${port}.`);
